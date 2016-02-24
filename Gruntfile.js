@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
+        src: ['app/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      lib_test: {
+      app_test: {
         src: ['app/**/*.js', 'test/**/*.js']
       }
     },
@@ -64,9 +64,9 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'nodeunit']
+      app_test: {
+        files: '<%= jshint.app_test.src %>',
+        tasks: ['jshint:app_test', 'nodeunit']
       }
     }
   });
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  //grunt.registerTask('default', ['jshint', 'nodeunit', 'concat', 'uglify']);
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'nodeunit', 'concat', 'uglify']);
+  //grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 
 };
