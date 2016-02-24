@@ -56,9 +56,9 @@ module.exports = function(grunt) {
         src: ['app/**/*.js', 'test/**/*.js']
       }
     },
-    nodeunit: {
-      files: ['test/**/*_test.js']
-    },
+    //nodeunit: {
+    //  files: ['test/**/*_test.js']
+    //},
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
