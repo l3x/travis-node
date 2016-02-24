@@ -56,9 +56,9 @@ module.exports = function(grunt) {
         src: ['app/**/*.js', 'test/**/*.js']
       }
     },
-    //nodeunit: {
-    //  files: ['test/**/*_test.js']
-    //},
+    nodeunit: {
+      files: ['test/**/*_test.js']
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -79,6 +79,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit', 'concat', 'uglify']);
+  //grunt.registerTask('default', ['jshint', 'nodeunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 
 };
